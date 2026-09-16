@@ -225,6 +225,8 @@ function boot() {
       const key = btn.getAttribute("data-tab");
       renderGallery(depoGallery, map[key]);
       depoGallery.setAttribute("data-gallery", key);
+      depoGallery.classList.add("gallery--phone");
+      depoGallery.classList.remove("gallery--desktop");
     });
   });
 
