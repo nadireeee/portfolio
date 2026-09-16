@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nadire Yöndem — Yazılım Portföyü</title>
-  <meta name="description" content="ERP entegrasyonu, Flutter depo uygulamaları, EDI otomasyon ve web panelleri." />
+  <title>Nadire Yöndem — Portföy</title>
+  <meta name="description" content="DIA ERP entegrasyonu, Flutter depo uygulamaları, EDI sipariş otomasyonu ve fatura panelleri." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -23,12 +23,13 @@
   <main id="top">
     <section class="hero">
       <p class="eyebrow">Bilgisayar Mühendisi · Yazılım Geliştirici</p>
-      <h1>ERP entegrasyonu ve saha operasyonu için <em>uçtan uca</em> yazılım.</h1>
+      <h1>Depoda, siparişte ve faturada <em>gerçekten çalışan</em> yazılım.</h1>
       <p class="lede">
-        Canlı DIA ERP ortamında offline-first Flutter depo uygulamaları,
-        EDI→ERP sipariş otomasyonu ve React/.NET fatura panelleri geliştirdim.
-        Müşteri kaynak kodları NDA nedeniyle private; burada ne yaptığımı
-        ekran görüntüleri ve teknik özetle gösteriyorum.
+        Nets’te canlı DIA ERP müşterileriyle çalıştım. İhtiyacı dinleyip süreçleri
+        çıkardım; sonra Flutter, Node.js ve .NET ile sahada kullanılan uygulamaları
+        yazıp canlıya aldım. Aşağıda üç depo mobil projesi, market sipariş otomasyonu
+        ve havuz fatura paneli var. Kaynak kod müşteriye ait olduğu için private;
+        burada ne yaptığımı ekranlarla anlatıyorum.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#projects">Projelere bak</a>
@@ -40,34 +41,46 @@
 
     <section class="strip" aria-label="Özet">
       <div><strong>3</strong><span>canlı depo mobil</span></div>
-      <div><strong>EDI</strong><span>market sipariş otomasyonu</span></div>
-      <div><strong>Full-stack</strong><span>React + .NET fatura paneli</span></div>
-      <div><strong>Offline-first</strong><span>Hive + Sync + Firebase</span></div>
+      <div><strong>EDI</strong><span>market sipariş aktarımı</span></div>
+      <div><strong>Full-stack</strong><span>fatura paneli</span></div>
+      <div><strong>Offline</strong><span>Hive + SyncEngine</span></div>
     </section>
 
     <section id="projects" class="projects">
       <header class="section-head">
-        <h2>Seçili projeler</h2>
-        <p>Önemli olan kod linki değil; çözülen problem, mimari karar ve canlıya alınan sonuç.</p>
+        <h2>Projeler</h2>
+        <p>
+          Hepsi gerçek müşteri ortamında kullanıldı. Her projede önce iş kuralını
+          netleştirdim, sonra ekranı ve entegrasyonu buna göre kurdum.
+        </p>
       </header>
 
-      <!-- Project cards injected from data; static HTML for Pages -->
       <article class="project" id="depo-mobil">
         <div class="project-copy">
           <p class="tag">Flutter · Android · DIA ERP</p>
-          <h3>Offline-First Depo Mobil Uygulamaları</h3>
+          <h3>Depo mobil uygulamaları (3 müşteri)</h3>
           <p>
-            3 müşteri için mal kabul, sevkiyat ve depo transferini el terminalinden yöneten
-            Android uygulamaları. İnternet yokken çalışır; bağlantıda DIA’ya senkronize olur.
+            Gıda ve perakende firmalarının depolarında personel, el terminaliyle
+            mal kabul, sevkiyat ve depolar arası transfer yapıyor. İnternet her
+            zaman yok; o yüzden uygulamayı offline çalışacak şekilde tasarladım.
+            Sipariş ve okutmalar cihazda tutuluyor, bağlantı gelince DIA’ya
+            sırayla gönderiliyor.
+          </p>
+          <p>
+            Üç müşteride aynı omurga var ama belge modeli farklı: birinde klasik
+            irsaliye, diğerinde sevkiyatta teslimat çıkış fişi, birinde lot/seri
+            okutma ve Honeywell desteği. Ortak kısım Riverpod, Hive, SyncEngine,
+            Firebase ile çok kullanıcılı görünürlük ve Zebra DataWedge barkod.
+            Güncellemeleri Play Store olmadan Drive üzerinden OTA ile dağıttım.
           </p>
           <ul>
-            <li>Riverpod + Hive + SyncEngine offline mimari</li>
-            <li>Zebra DataWedge / Honeywell barkod; kamera yedek</li>
-            <li>Firebase Auth + Firestore çok kullanıcılı görünürlük</li>
-            <li>Müşteriye özel belge modelleri (irsaliye / teslimat fişi / lot-seri)</li>
-            <li>Google Drive OTA APK dağıtımı</li>
+            <li>Mal kabul / sevkiyat / transfer akışları uçtan uca</li>
+            <li>Kısmi aktarım, birim seçimi, miktar girişi, saklanan belgeler</li>
+            <li>DIA Web Servis v3 (sipariş, irsaliye, malzeme fişi, rapor)</li>
+            <li>UAT ve sürüm doğrulama ile canlıya alma</li>
           </ul>
-          <p class="meta">Stack: Flutter, Dart, Riverpod, Hive, Dio, Firebase, DIA WS v3 · Müşteri A / B / C galerileri</p>
+          <p class="meta">Flutter, Dart, Riverpod, Hive, Dio, Firebase, DIA WS v3</p>
+          <p class="meta">Sekmeler: Müşteri A · B · C (her biri ayrı canlı proje)</p>
         </div>
         <div class="gallery-wrap">
           <div class="tabs" role="tablist" aria-label="Müşteri uygulamaları">
@@ -75,57 +88,72 @@
             <button type="button" class="tab" data-tab="cankirli">Müşteri B</button>
             <button type="button" class="tab" data-tab="mobil-sevkiyat">Müşteri C</button>
           </div>
-          <div class="gallery" data-gallery="akseker"></div>
+          <div class="gallery gallery--phone" data-gallery="akseker"></div>
         </div>
       </article>
 
       <article class="project reverse" id="ecod">
         <div class="project-copy">
           <p class="tag">Node.js · Express · EDI</p>
-          <h3>Market Sipariş Otomasyonu (Bizofis → DIA)</h3>
+          <h3>Market sipariş otomasyonu (Bizofis → DIA)</h3>
           <p>
-            Perakende zincir siparişlerini ECOD EDI üzerinden çekip DIA’ya alınan sipariş
-            olarak aktaran web aracı. Manuel girişi otomatikleştirdi.
+            Marketlerden gelen siparişler daha önce elle DIA’ya giriliyordu;
+            hem yavaş hem hata riski yüksekti. Bizofis / ECOD EDI üzerinden
+            siparişleri çekip listede gösteren, filtreleyen ve seçilenleri
+            DIA’da alınan sipariş olarak açan bir web aracı yazdım.
+          </p>
+          <p>
+            A101, BİM, FİLE ve Yemek Sepeti taraf/GLN eşlemesi, mağaza adı
+            eşlemesi, stok eşlemesi ve aktarım sonrası fiş no takibi var.
+            Tekli veya toplu aktarım yapılabiliyor; tekrar çekimde gereksiz
+            çağrı olmasın diye yerel cache kullandım. Giriş Firebase Auth ile.
           </p>
           <ul>
-            <li>Yeni / tüm sipariş çekimi, filtre, arama, detay</li>
-            <li>GLN → mağaza eşleme, stok eşleme</li>
-            <li>Tekli/toplu DIA aktarım + fiş no takibi</li>
-            <li>Firebase oturum koruması</li>
+            <li>Yeni sipariş / tüm sipariş çekimi</li>
+            <li>Market filtresi, arama, detay ekranı</li>
+            <li>DIA login + scf_siparis_ekle entegrasyonu</li>
+            <li>Aktarıldı işaretleme ve izlenebilir fiş referansı</li>
           </ul>
-          <p class="meta">Stack: Node.js, Express, Vanilla JS, XML/EDI, Firebase, DIA WS</p>
+          <p class="meta">Node.js, Express, Vanilla JS, XML/EDI, Firebase, DIA WS</p>
         </div>
-        <div class="gallery" data-gallery="ecod"></div>
+        <div class="gallery gallery--desktop" data-gallery="ecod"></div>
       </article>
 
       <article class="project" id="fatura">
         <div class="project-copy">
-          <p class="tag">React · .NET 9 · TypeScript</p>
-          <h3>Havuz Fatura Aktarım Paneli</h3>
+          <p class="tag">React · TypeScript · .NET 9</p>
+          <h3>Havuz fatura aktarım paneli</h3>
           <p>
-            Havuz firmadaki faturaları hedef firma, şube, depo ve döneme fatura veya
-            kalem düzeyinde aktaran full-stack panel.
+            Havuz firmadaki faturaların hedef firma, şube, depo ve döneme
+            kontrollü aktarılması gerekiyordu. React arayüz ve .NET 9 Web API
+            ile tek panelde liste, durum ve aktarım akışını kurdum.
+          </p>
+          <p>
+            Fatura bazlı veya kalem bazlı (dağıtılacak) seçim yapılabiliyor.
+            Bekliyor / kısmi / aktarıldı durumları ekranda net; hata olursa
+            tekrar dene, paralel gönderim ve sunucu tarafında mükerrer kayıt
+            engeli var. Son aktarılan kayıtlar aynı ekranda takip ediliyor.
           </p>
           <ul>
-            <li>Bekliyor / Kısmi / Aktarıldı durum yönetimi</li>
-            <li>Retry, paralel gönderim, sunucu dedup</li>
-            <li>Son aktarılan kaydı tek ekranda</li>
+            <li>Hedef firma / şube / depo / dönem seçimi</li>
+            <li>Durum rozetleri ve son aktarım geçmişi</li>
+            <li>DIA fatura aktarım API’si + Firebase oturum</li>
+            <li>Retry ve dedup ile güvenli gönderim</li>
           </ul>
-          <p class="meta">Stack: React 19, Vite, TypeScript, Tailwind, .NET 9 Web API, Firebase</p>
+          <p class="meta">React 19, Vite, TypeScript, Tailwind, .NET 9, Firebase, DIA WS</p>
         </div>
-        <div class="gallery" data-gallery="fatura"></div>
+        <div class="gallery gallery--desktop" data-gallery="fatura"></div>
       </article>
-
     </section>
 
     <section id="skills" class="skills">
       <header class="section-head">
-        <h2>Yetkinlikler</h2>
+        <h2>Ne ile çalışıyorum</h2>
       </header>
       <div class="skill-grid">
         <div>
           <h4>Mobil</h4>
-          <p>Flutter, Dart, Riverpod, Hive, Firebase, Zebra DataWedge</p>
+          <p>Flutter, Dart, Riverpod, Hive, Firebase, Zebra DataWedge, Honeywell</p>
         </div>
         <div>
           <h4>Backend / Web</h4>
@@ -133,18 +161,21 @@
         </div>
         <div>
           <h4>ERP</h4>
-          <p>DIA ERP, Web Servis v3, Flow/Rapor, EDI/ECOD, sipariş-irsaliye-fatura</p>
+          <p>DIA ERP, Web Servis v3, Flow/özel rapor, EDI/ECOD, sipariş–irsaliye–fatura</p>
         </div>
         <div>
-          <h4>Kalite</h4>
-          <p>API / birim / entegrasyon / regresyon testleri, UAT, kabul kriteri</p>
+          <h4>Test</h4>
+          <p>API / birim / entegrasyon / regresyon, UAT, kabul kriteri, sürüm doğrulama</p>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <h2>İletişim</h2>
-      <p>İş başvuruları ve demo talepleri için yazın. Kaynak kod NDA kapsamındadır; walkthrough paylaşılabilir.</p>
+      <p>
+        Başvuru veya demo için yazabilirsiniz. Müşteri kodunu açık paylaşamam;
+        ekran üzerinden walkthrough gösterebilirim.
+      </p>
       <ul class="contact-list">
         <li><a href="mailto:nadireyndem@gmail.com">nadireyndem@gmail.com</a></li>
         <li><a href="tel:+905464827442">+90 546 482 74 42</a></li>
@@ -156,7 +187,7 @@
   </main>
 
   <footer>
-    <p>© 2026 Nadire Yöndem · Portföy sitesi · Müşteri verileri maskelenmiştir</p>
+    <p>© 2026 Nadire Yöndem</p>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden>
