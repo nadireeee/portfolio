@@ -43,7 +43,7 @@
       <div><strong>3</strong><span>canlı depo mobil</span></div>
       <div><strong>EDI</strong><span>market sipariş aktarımı</span></div>
       <div><strong>Full-stack</strong><span>fatura paneli</span></div>
-      <div><strong>Offline</strong><span>Hive + SyncEngine</span></div>
+      <div><strong>.NET</strong><span>mikroservis e-ticaret</span></div>
     </section>
 
     <section id="projects" class="projects">
@@ -143,6 +143,35 @@
           <p class="meta">React 19, Vite, TypeScript, Tailwind, .NET 9, Firebase, DIA WS</p>
         </div>
         <div class="gallery gallery--desktop" data-gallery="fatura"></div>
+      </article>
+
+      <article class="project reverse" id="mikroservisler">
+        <div class="project-copy">
+          <p class="tag">.NET 8 · React · Docker · Mikroservis</p>
+          <h3>ToyLand — mikroservis e-ticaret platformu</h3>
+          <p>
+            Okul / kişisel proje olarak uçtan uca bir e-ticaret sistemi kurdum.
+            Amaç tek monolit değil; kimlik, katalog, sepet, sipariş ve indirim
+            servislerini ayrı çalıştırıp API Gateway üzerinden tek UI’ya bağlamak.
+          </p>
+          <p>
+            Backend .NET 8: Duende IdentityServer (JWT), Catalog (PostgreSQL/Marten),
+            Basket (Redis), Ordering (SQL Server + CQRS), Discount (gRPC),
+            YARP gateway, RabbitMQ/MassTransit event bus. Frontend React 18
+            (Redux Toolkit, OIDC). Her şey Docker Compose ile ayağa kalkıyor.
+          </p>
+          <ul>
+            <li>Servisler: Identity, Catalog, Basket, Ordering, Discount, YARP</li>
+            <li>React mağaza: ürün listesi, sepet, checkout, siparişler</li>
+            <li>Event-driven sipariş akışı (RabbitMQ)</li>
+            <li>Demo kullanıcılar ile uçtan uca alışveriş senaryosu</li>
+          </ul>
+          <p class="meta">
+            Kod:
+            <a href="https://github.com/nadireeee/mikroservisler-2025" target="_blank" rel="noopener">github.com/nadireeee/mikroservisler-2025</a>
+          </p>
+        </div>
+        <div class="gallery gallery--desktop" data-gallery="mikroservisler"></div>
       </article>
     </section>
 
