@@ -1,0 +1,14 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local / secrets (none expected in this static site)
+.env
+.env.*
+*.pem
+*.key
+credentials.json
