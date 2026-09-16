@@ -207,10 +207,10 @@ img { max-width: 100%; display: block; }
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.55rem;
-  max-height: 520px;
+  gap: 0.65rem;
+  max-height: 640px;
   overflow: auto;
-  padding: 0.4rem;
+  padding: 0.55rem;
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -222,15 +222,17 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   background: #0a0d0a;
   cursor: zoom-in;
+  min-height: 220px;
 }
 .gallery img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  object-position: top;
+  height: 220px;
+  object-fit: contain;
+  object-position: center top;
+  image-rendering: -webkit-optimize-contrast;
   transition: transform 0.35s ease;
 }
-.gallery figure:hover img { transform: scale(1.04); }
+.gallery figure:hover img { transform: scale(1.02); }
 .gallery figcaption {
   position: absolute;
   left: 0; right: 0; bottom: 0;
@@ -328,7 +330,8 @@ footer {
     grid-template-columns: 1fr;
     direction: ltr;
   }
-  .gallery { max-height: 360px; grid-template-columns: repeat(2, 1fr); }
+  .gallery { max-height: 480px; grid-template-columns: repeat(2, 1fr); }
+  .gallery img, .gallery figure { height: 200px; min-height: 200px; }
   .skills .skill-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
