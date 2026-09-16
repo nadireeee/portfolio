@@ -12,3 +12,8 @@ Desktop.ini
 *.pem
 *.key
 credentials.json
+
+node_modules/
+package.json
+package-lock.json
+
