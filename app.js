@@ -1,4 +1,4 @@
-/* Manifest gömülü — sunucu gerekmez, index.html çift tıkla yeter */
+﻿/* Manifest gömülü — sunucu gerekmez, index.html çift tıkla yeter */
 const MANIFEST = {
   "akseker": [
     "assets/akseker/01_giris.png",
@@ -169,34 +169,14 @@ const MANIFEST = {
     "assets/mikroservisler/10-profile.png"
   ],
   "bitirme": [
-    "assets/bitirme/01-home-anasayfa.png",
-    "assets/bitirme/02-home-light-theme.png",
-    "assets/bitirme/03-login-giris.png",
-    "assets/bitirme/04-register-kayit.png",
-    "assets/bitirme/05-courses-kurslar.png",
-    "assets/bitirme/06-courses-filtre-acik.png",
-    "assets/bitirme/07-course-detail-temeller.png",
-    "assets/bitirme/08-courses-ogrenme-yollari.png",
-    "assets/bitirme/09-progress-basarilar.png",
-    "assets/bitirme/10-exercises-alistirmalar.png",
-    "assets/bitirme/11-exercises-arama.png",
-    "assets/bitirme/12-code-editor.png",
-    "assets/bitirme/13-code-editor-calistir.png",
-    "assets/bitirme/14-quiz.png",
-    "assets/bitirme/15-quiz-tab-2.png",
-    "assets/bitirme/16-forum.png",
-    "assets/bitirme/17-forum-yeni-konu.png",
-    "assets/bitirme/18-progress-ilerleme.png",
-    "assets/bitirme/19-progress-tab-2.png",
-    "assets/bitirme/20-progress-tab-3.png",
-    "assets/bitirme/21-ai-mentor.png",
-    "assets/bitirme/22-ai-chat.png",
-    "assets/bitirme/23-ai-chat-soru.png",
-    "assets/bitirme/24-profile-profil.png",
-    "assets/bitirme/25-profile-tab-2.png",
-    "assets/bitirme/26-profile-tab-3.png",
-    "assets/bitirme/27-profile-tab-4.png",
-    "assets/bitirme/28-progress-hedefler.png"
+    "assets/bitirme/01-login.png",
+    "assets/bitirme/02-signup.png",
+    "assets/bitirme/03-home.png",
+    "assets/bitirme/04-ai-chat.png",
+    "assets/bitirme/05-ai-chat-cevap.png",
+    "assets/bitirme/06-soru.png",
+    "assets/bitirme/07-soru-cevap.png",
+    "assets/bitirme/08-sonraki-soru.png"
   ]
 };
 
