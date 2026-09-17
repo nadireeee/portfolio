@@ -165,8 +165,7 @@ const MANIFEST = {
     "assets/mikroservisler/05-cart.png",
     "assets/mikroservisler/06-checkout.png",
     "assets/mikroservisler/07-orders.png",
-    "assets/mikroservisler/09-products-logged-in.png",
-    "assets/mikroservisler/10-profile.png"
+    "assets/mikroservisler/09-products-logged-in.png"
   ]
 };
 
