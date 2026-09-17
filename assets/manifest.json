@@ -160,6 +160,11 @@
                            "assets/mikroservisler/01-home.png",
                            "assets/mikroservisler/02-products.png",
                            "assets/mikroservisler/03-login.png",
-                           "assets/mikroservisler/04-register.png"
+                           "assets/mikroservisler/04-register.png",
+                           "assets/mikroservisler/05-cart.png",
+                           "assets/mikroservisler/06-checkout.png",
+                           "assets/mikroservisler/07-orders.png",
+                           "assets/mikroservisler/09-products-logged-in.png",
+                           "assets/mikroservisler/10-profile.png"
                        ]
 }
