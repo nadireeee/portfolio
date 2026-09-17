@@ -27,9 +27,10 @@
       <p class="lede">
         Nets’te canlı DIA ERP müşterileriyle çalıştım. İhtiyacı dinleyip süreçleri
         çıkardım; sonra Flutter, Node.js ve .NET ile sahada kullanılan uygulamaları
-        yazıp canlıya aldım. Aşağıda üç depo mobil projesi, market sipariş otomasyonu
-        ve havuz fatura paneli var. Kaynak kod müşteriye ait olduğu için private;
-        burada ne yaptığımı ekranlarla anlatıyorum.
+        yazıp canlıya aldım. Aşağıda üç depo mobil projesi, market sipariş otomasyonu,
+        havuz fatura paneli ve üniversite mikroservisler dersinde geliştirdiğim
+        ToyLand e-ticaret projesi var. Müşteri kodları private; okul projesi ise
+        GitHub’da açık.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#projects">Projelere bak</a>
@@ -43,15 +44,16 @@
       <div><strong>3</strong><span>canlı depo mobil</span></div>
       <div><strong>EDI</strong><span>market sipariş aktarımı</span></div>
       <div><strong>Full-stack</strong><span>fatura paneli</span></div>
-      <div><strong>.NET</strong><span>mikroservis e-ticaret</span></div>
+      <div><strong>Okul</strong><span>mikroservis ToyLand</span></div>
     </section>
 
     <section id="projects" class="projects">
       <header class="section-head">
         <h2>Projeler</h2>
         <p>
-          Hepsi gerçek müşteri ortamında kullanıldı. Her projede önce iş kuralını
-          netleştirdim, sonra ekranı ve entegrasyonu buna göre kurdum.
+          İlk dördü canlı müşteri ortamında kullanıldı; sonuncusu üniversite
+          mikroservisler dersi kapsamında açık kaynak okul projesi. Her birinde
+          önce iş kuralını netleştirip ekranı ve entegrasyonu ona göre kurdum.
         </p>
       </header>
 
@@ -147,27 +149,52 @@
 
       <article class="project reverse" id="mikroservisler">
         <div class="project-copy">
-          <p class="tag">.NET 8 · React · Docker · Mikroservis</p>
-          <h3>ToyLand — mikroservis e-ticaret platformu</h3>
+          <p class="tag">Okul projesi · .NET 8 · React · Docker</p>
+          <h3>ToyLand — mikroservis e-ticaret (mikroservisler-2025)</h3>
           <p>
-            Okul / kişisel proje olarak uçtan uca bir e-ticaret sistemi kurdum.
-            Amaç tek monolit değil; kimlik, katalog, sepet, sipariş ve indirim
-            servislerini ayrı çalıştırıp API Gateway üzerinden tek UI’ya bağlamak.
+            Isparta’da bilgisayar mühendisliği eğitimi sırasında, 2025 üniversite
+            mikroservisler dersi kapsamında geliştirdiğim okul projesi. Amaç
+            mikroservis mantığını kitaptan değil çalışan bir sistem üzerinden
+            öğrenmekti: oyuncak temalı küçük bir e-ticaret (ToyLand) kurup
+            kimlik, katalog, sepet, sipariş ve indirim işlerini ayrı servislere
+            böldüm.
           </p>
           <p>
-            Backend .NET 8: Duende IdentityServer (JWT), Catalog (PostgreSQL/Marten),
-            Basket (Redis), Ordering (SQL Server + CQRS), Discount (gRPC),
-            YARP gateway, RabbitMQ/MassTransit event bus. Frontend React 18
-            (Redux Toolkit, OIDC). Her şey Docker Compose ile ayağa kalkıyor.
+            Uçtan uca ne yaptım: React mağaza arayüzü, YARP API Gateway, Duende
+            IdentityServer ile giriş/kayıt, ürün kataloğu, sepet, checkout ve
+            sipariş listesi. İstek akışı kabaca şöyle: React UI → Gateway (:6004)
+            → Identity / Catalog / Basket / Ordering / Discount servisleri.
+            Catalog tarafında PostgreSQL + Marten, Basket’te Redis, Ordering’de
+            SQL Server + EF Core (CQRS), Discount’ta gRPC, servisler arası
+            olaylarda RabbitMQ / MassTransit kullandım. Frontend React 18,
+            Redux Toolkit ve OIDC ile oturumu yönetiyor. Hepsini Docker Compose
+            ile birlikte ayağa kaldırıyorum.
+          </p>
+          <p>
+            Çalışan akışlar: kayıt ve giriş, ürün listesi / kategori filtreleri,
+            sepete ekleme–miktar güncelleme, checkout (teslimat + ödeme formu)
+            ve siparişlerim ekranı. Demo için README’deki kullanıcılar:
+            <code>admin</code> / <code>Admin123!</code> ve
+            <code>swn</code> / <code>Password123!</code>.
+          </p>
+          <p>
+            Çalıştırma: repoda <code>docker compose up -d</code>; React mağaza
+            genelde <code>http://localhost:6006</code>, Gateway
+            <code>http://localhost:6004</code>. Kaynak kod tamamen açık:
           </p>
           <ul>
-            <li>Servisler: Identity, Catalog, Basket, Ordering, Discount, YARP</li>
-            <li>React mağaza: ürün listesi, sepet, checkout, siparişler</li>
-            <li>Event-driven sipariş akışı (RabbitMQ)</li>
-            <li>Demo kullanıcılar ile uçtan uca alışveriş senaryosu</li>
+            <li>Kimlik, katalog, sepet, sipariş, indirim + YARP gateway</li>
+            <li>Event-driven sipariş akışı (RabbitMQ / MassTransit)</li>
+            <li>gRPC indirim servisi, Redis sepet, Marten katalog</li>
+            <li>Docker Compose ile yerel tam stack</li>
           </ul>
           <p class="meta">
-            Kod:
+            Teknoloji: .NET 8, Duende IdentityServer, EF Core, Marten, Redis,
+            SQL Server, PostgreSQL, RabbitMQ, MassTransit, gRPC, YARP,
+            Docker Compose, React 18, Redux Toolkit, OIDC
+          </p>
+          <p class="meta">
+            GitHub (açık):
             <a href="https://github.com/nadireeee/mikroservisler-2025" target="_blank" rel="noopener">github.com/nadireeee/mikroservisler-2025</a>
           </p>
         </div>
@@ -202,8 +229,9 @@
     <section id="contact" class="contact">
       <h2>İletişim</h2>
       <p>
-        Başvuru veya demo için yazabilirsiniz. Müşteri kodunu açık paylaşamam;
-        ekran üzerinden walkthrough gösterebilirim.
+        Başvuru veya demo için yazabilirsiniz. Müşteri projelerinin kaynak kodu
+        private; okul mikroservis projesi (ToyLand) GitHub’da açık. Müşteri
+        uygulamaları için ekran üzerinden walkthrough gösterebilirim.
       </p>
       <ul class="contact-list">
         <li><a href="mailto:nadireyndem@gmail.com">nadireyndem@gmail.com</a></li>
