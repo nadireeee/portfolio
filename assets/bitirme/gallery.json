@@ -9,19 +9,23 @@
   },
   {
     "file": "02-dersler.png",
-    "caption": "C++ dersleri"
+    "caption": "C++ dersleri · modüller"
   },
   {
     "file": "03-ders-icerik.png",
-    "caption": "Ders listesi"
+    "caption": "Ders içeriği"
   },
   {
     "file": "04-quiz-secim.png",
-    "caption": "Quiz seçimi"
+    "caption": "Quiz konuları"
   },
   {
     "file": "05-quiz.png",
-    "caption": "Sıralı quiz sorusu"
+    "caption": "Sıralı quiz · ilerleme"
+  },
+  {
+    "file": "05b-quiz-2.png",
+    "caption": "Quiz · sonraki soru"
   },
   {
     "file": "06-profil.png",
@@ -29,10 +33,18 @@
   },
   {
     "file": "07-ai-chat.png",
-    "caption": "Chead Chat · Gemini yanıtı"
+    "caption": "Chead Chat · çok tur Gemini"
+  },
+  {
+    "file": "07b-ai-chat-scroll.png",
+    "caption": "Chead Chat · önceki turlar"
   },
   {
     "file": "08-ai-editor.png",
     "caption": "AI kod editörü"
+  },
+  {
+    "file": "09-forum.png",
+    "caption": "Topluluk forumu"
   }
 ]
