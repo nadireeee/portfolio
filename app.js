@@ -177,8 +177,8 @@ const MANIFEST = {
     "assets/bitirme/05-quiz.png",
     "assets/bitirme/05b-quiz-2.png",
     "assets/bitirme/06-profil.png",
-    "assets/bitirme/07-ai-chat.png",
     "assets/bitirme/07b-ai-chat-scroll.png",
+    "assets/bitirme/07-ai-chat.png",
     "assets/bitirme/08-ai-editor.png",
     "assets/bitirme/09-forum.png"
   ]
