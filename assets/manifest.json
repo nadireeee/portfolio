@@ -168,12 +168,13 @@
                        ],
     "bitirme":  [
                     "assets/bitirme/01-login.png",
-                    "assets/bitirme/02-signup.png",
-                    "assets/bitirme/03-home.png",
-                    "assets/bitirme/04-ai-chat.png",
-                    "assets/bitirme/05-ai-chat-cevap.png",
-                    "assets/bitirme/06-soru.png",
-                    "assets/bitirme/07-soru-cevap.png",
-                    "assets/bitirme/08-sonraki-soru.png"
+                    "assets/bitirme/02-ana-ekran.png",
+                    "assets/bitirme/02-dersler.png",
+                    "assets/bitirme/03-ders-icerik.png",
+                    "assets/bitirme/04-quiz-secim.png",
+                    "assets/bitirme/05-quiz.png",
+                    "assets/bitirme/06-profil.png",
+                    "assets/bitirme/07-ai-chat.png",
+                    "assets/bitirme/08-ai-editor.png"
                 ]
 }
