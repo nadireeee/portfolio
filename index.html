@@ -150,53 +150,25 @@
       <article class="project reverse" id="mikroservisler">
         <div class="project-copy">
           <p class="tag">Okul projesi · .NET 8 · React · Docker</p>
-          <h3>ToyLand — mikroservis e-ticaret (mikroservisler-2025)</h3>
+          <h3>ToyLand — Mikroservis E-Ticaret Platformu</h3>
           <p>
-            Isparta’da bilgisayar mühendisliği eğitimi sırasında, 2025 üniversite
-            mikroservisler dersi kapsamında geliştirdiğim okul projesi. Amaç
-            mikroservis mantığını kitaptan değil çalışan bir sistem üzerinden
-            öğrenmekti: oyuncak temalı küçük bir e-ticaret (ToyLand) kurup
-            kimlik, katalog, sepet, sipariş ve indirim işlerini ayrı servislere
-            böldüm.
+            Üniversite mikroservisler dersi kapsamında geliştirdiğim e-ticaret
+            uygulaması. Oyuncak satışı senaryosu üzerinden kimlik, katalog,
+            sepet, sipariş ve indirim süreçlerini ayrı mikroservisler olarak
+            tasarladım; React arayüzü YARP API Gateway üzerinden bu servislere
+            bağlanıyor.
           </p>
           <p>
-            Uçtan uca ne yaptım: React mağaza arayüzü, YARP API Gateway, Duende
-            IdentityServer ile giriş/kayıt, ürün kataloğu, sepet, checkout ve
-            sipariş listesi. İstek akışı kabaca şöyle: React UI → Gateway (:6004)
-            → Identity / Catalog / Basket / Ordering / Discount servisleri.
-            Catalog tarafında PostgreSQL + Marten, Basket’te Redis, Ordering’de
-            SQL Server + EF Core (CQRS), Discount’ta gRPC, servisler arası
-            olaylarda RabbitMQ / MassTransit kullandım. Frontend React 18,
-            Redux Toolkit ve OIDC ile oturumu yönetiyor. Hepsini Docker Compose
-            ile birlikte ayağa kaldırıyorum.
-          </p>
-          <p>
-            Çalışan akışlar: kayıt ve giriş, ürün listesi / kategori filtreleri,
-            sepete ekleme–miktar güncelleme, checkout (teslimat + ödeme formu)
-            ve siparişlerim ekranı. Demo için README’deki kullanıcılar:
-            <code>admin</code> / <code>Admin123!</code> ve
-            <code>swn</code> / <code>Password123!</code>.
-          </p>
-          <p>
-            Çalıştırma: repoda <code>docker compose up -d</code>; React mağaza
-            genelde <code>http://localhost:6006</code>, Gateway
-            <code>http://localhost:6004</code>. Kaynak kod tamamen açık:
+            Backend’de .NET 8, Duende IdentityServer, EF Core, Redis, PostgreSQL,
+            SQL Server, gRPC ve RabbitMQ kullandım. Frontend React 18 ile
+            yazıldı. Tüm sistem Docker Compose ile çalışıyor.
           </p>
           <ul>
-            <li>Kimlik, katalog, sepet, sipariş, indirim + YARP gateway</li>
-            <li>Event-driven sipariş akışı (RabbitMQ / MassTransit)</li>
-            <li>gRPC indirim servisi, Redis sepet, Marten katalog</li>
-            <li>Docker Compose ile yerel tam stack</li>
+            <li>Giriş / kayıt, ürün listesi, sepet, checkout, siparişler</li>
+            <li>Servisler: Identity, Catalog, Basket, Ordering, Discount, Gateway</li>
+            <li>Event-driven sipariş akışı ve gRPC indirim servisi</li>
           </ul>
-          <p class="meta">
-            Teknoloji: .NET 8, Duende IdentityServer, EF Core, Marten, Redis,
-            SQL Server, PostgreSQL, RabbitMQ, MassTransit, gRPC, YARP,
-            Docker Compose, React 18, Redux Toolkit, OIDC
-          </p>
-          <p class="meta">
-            GitHub (açık):
-            <a href="https://github.com/nadireeee/mikroservisler-2025" target="_blank" rel="noopener">github.com/nadireeee/mikroservisler-2025</a>
-          </p>
+          <p class="meta">.NET 8 · React · Docker · YARP · Redis · RabbitMQ · gRPC</p>
         </div>
         <div class="gallery gallery--desktop" data-gallery="mikroservisler"></div>
       </article>
