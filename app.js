@@ -198,18 +198,36 @@ const MANIFEST = {
     "assets/maui-dotnet/02-register.png",
     "assets/maui-dotnet/03-forgot-password.png",
     "assets/maui-dotnet/04-movies.png",
+    "assets/maui-dotnet/04b-movies-scroll.png",
     "assets/maui-dotnet/05-movie-detail.png",
+    "assets/maui-dotnet/10-puanlama.png",
     "assets/maui-dotnet/06-favorites.png",
-    "assets/maui-dotnet/07-profile.png",
+    "assets/maui-dotnet/06b-favorites-delete.png",
     "assets/maui-dotnet/08-rated.png",
-    "assets/maui-dotnet/09-home-movies.png"
+    "assets/maui-dotnet/07-profile.png"
   ]
 };
 
+const GALLERY_CAPTIONS = {
+  "01-login.png": "Giri?",
+  "02-register.png": "Kay?t",
+  "03-forgot-password.png": "?ifremi unuttum",
+  "04-movies.png": "Film listesi",
+  "04b-movies-scroll.png": "Film listesi (kayd?r?lm??)",
+  "05-movie-detail.png": "Film detay? · E?k?ya",
+  "10-puanlama.png": "Puanlama (Filmi Puanla)",
+  "06-favorites.png": "Favoriler",
+  "06b-favorites-delete.png": "Favoriden sil (Delete Selected)",
+  "08-rated.png": "Puanlad???m filmler",
+  "07-profile.png": "Profil · nadire@nadire.com",
+  "09-home-movies.png": "Film listesi"
+};
+
 function prettyName(file) {
+  if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
   return file
     .replace(/\.[^.]+$/, "")
-    .replace(/^\d+[_\-]*/, "")
+    .replace(/^\d+[a-z]?[_\-]*/, "")
     .replace(/[-_]/g, " ");
 }
 
