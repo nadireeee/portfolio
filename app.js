@@ -170,7 +170,6 @@ const MANIFEST = {
   ],
   "bitirme": [
     "assets/bitirme/01-login.png",
-    "assets/bitirme/02-giris-sonrasi.png",
     "assets/bitirme/02-ana-ekran.png",
     "assets/bitirme/02-dersler.png",
     "assets/bitirme/03-ders-icerik.png",
@@ -184,14 +183,13 @@ const MANIFEST = {
     "assets/bitirme/15b-rozetler-tab.png",
     "assets/bitirme/16-forum-liste.png",
     "assets/bitirme/16b-forum-detay.png",
+    "assets/bitirme/10-rastgele-sorular.png",
+    "assets/bitirme/12-ai-oneri-degerlendirme.png",
     "assets/bitirme/14-kod-analiz-oneri.png",
     "assets/bitirme/08a-kod-bos.png",
     "assets/bitirme/08b-yeni-proje-ai.png",
     "assets/bitirme/08-ai-kod-olusturucu.png",
     "assets/bitirme/08c-kod-olusturuldu.png",
-    "assets/bitirme/10-rastgele-sorular.png",
-    "assets/bitirme/11-derleme-hatasi.png",
-    "assets/bitirme/12-ai-oneri-degerlendirme.png",
     "assets/bitirme/06-profil.png"
   ]
 };
