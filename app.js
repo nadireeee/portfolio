@@ -215,9 +215,11 @@ const GALLERY_CAPTIONS = {
   "04-movies.png": "Film listesi",
   "04b-movies-scroll.png": "Film listesi (kayd?r?lm??)",
   "05-movie-detail.png": "Film detay? · E?k?ya",
-  "10-puanlama.png": "Puanlama (Filmi Puanla)",
+  "10-puanlama.png": "Nas?l puan verilir (Filmi Puanla + kaydet)",
+  "05b-rate-movie.png": "Puanlama ekran?",
+  "05-movie-detail.png": "Film detay? · E?k?ya + puanlama",
   "06-favorites.png": "Favoriler",
-  "06b-favorites-delete.png": "Favoriden sil (Delete Selected)",
+  "06b-favorites-delete.png": "Favoriden sil · seçili film + Delete Selected",
   "08-rated.png": "Puanlad???m filmler",
   "07-profile.png": "Profil · nadire@nadire.com",
   "09-home-movies.png": "Film listesi"
