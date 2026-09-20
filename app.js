@@ -201,6 +201,7 @@ const MANIFEST = {
     "assets/maui-dotnet/04b-movies-scroll.png",
     "assets/maui-dotnet/12-movie-detail-info.png",
     "assets/maui-dotnet/11-rate-movie-clean.png",
+    "assets/maui-dotnet/13-watch-trailer-homepage.png",
     "assets/maui-dotnet/06b-favorites-delete.png",
     "assets/maui-dotnet/08-rated.png",
     "assets/maui-dotnet/07-profile.png"
@@ -215,12 +216,13 @@ const GALLERY_CAPTIONS = {
   "04b-movies-scroll.png": "Film listesi (kaydirilmis)",
   "12-movie-detail-info.png": "Film detayi - Eskiya (ozet, tur, oyuncular)",
   "11-rate-movie-clean.png": "Puanlama - Rate Movie + Save Rating",
+  "13-watch-trailer-homepage.png": "Links - Watch Trailer + Visit Homepage",
   "06b-favorites-delete.png": "Favoriler - secili film + Delete Selected",
   "08-rated.png": "Puanladigim filmler",
   "07-profile.png": "Profil - nadire@nadire.com"
 };
 
-const IMG_CACHE_BUST = "20260920unique2";
+const IMG_CACHE_BUST = "20260920links";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
