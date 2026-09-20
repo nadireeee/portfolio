@@ -1,4 +1,4 @@
-ï»¿/* Manifest gÃ¶mÃ¼lÃ¼ â€” sunucu gerekmez, index.html Ã§ift tÄ±kla yeter */
+/* Manifest gömülü — sunucu gerekmez, index.html çift tıkla yeter */
 const MANIFEST = {
   "akseker": [
     "assets/akseker/01_giris.png",
@@ -185,6 +185,7 @@ const MANIFEST = {
     "assets/bitirme/16b-forum-detay.png",
     "assets/bitirme/10-rastgele-sorular.png",
     "assets/bitirme/12-ai-oneri-degerlendirme.png",
+    "assets/bitirme/12b-degerlendirme-scroll.png",
     "assets/bitirme/14-kod-analiz-oneri.png",
     "assets/bitirme/08a-kod-bos.png",
     "assets/bitirme/08b-yeni-proje-ai.png",
@@ -206,7 +207,7 @@ function renderGallery(el, paths, emptyNote) {
   if (!paths || paths.length === 0) {
     const p = document.createElement("p");
     p.className = "gallery-empty";
-    p.textContent = emptyNote || "Ekran gÃ¶rÃ¼ntÃ¼leri yakÄ±nda eklenecek.";
+    p.textContent = emptyNote || "Ekran görüntüleri yakında eklenecek.";
     el.appendChild(p);
     return;
   }
