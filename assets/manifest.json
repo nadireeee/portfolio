@@ -190,5 +190,16 @@
         "assets/bitirme/08-ai-kod-olusturucu.png",
         "assets/bitirme/08c-kod-olusturuldu.png",
         "assets/bitirme/06-profil.png"
+    ],
+    "maui-dotnet": [
+        "assets/maui-dotnet/01-login.png",
+        "assets/maui-dotnet/02-register.png",
+        "assets/maui-dotnet/03-forgot-password.png",
+        "assets/maui-dotnet/04-movies.png",
+        "assets/maui-dotnet/05-movie-detail.png",
+        "assets/maui-dotnet/06-favorites.png",
+        "assets/maui-dotnet/07-profile.png",
+        "assets/maui-dotnet/08-rated.png",
+        "assets/maui-dotnet/09-home-movies.png"
     ]
 }
