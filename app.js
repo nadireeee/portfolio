@@ -209,19 +209,18 @@ const MANIFEST = {
 };
 
 const GALLERY_CAPTIONS = {
-  "01-login.png": "Giri?",
-  "02-register.png": "Kay?t",
-  "03-forgot-password.png": "?ifremi unuttum",
+  "01-login.png": "Giris",
+  "02-register.png": "Kayit",
+  "03-forgot-password.png": "Sifremi unuttum",
   "04-movies.png": "Film listesi",
-  "04b-movies-scroll.png": "Film listesi (kayd?r?lm??)",
-  "05-movie-detail.png": "Film detay? · E?k?ya",
-  "10-puanlama.png": "Nas?l puan verilir (Filmi Puanla + kaydet)",
-  "05b-rate-movie.png": "Puanlama ekran?",
-  "05-movie-detail.png": "Film detay? · E?k?ya + puanlama",
+  "04b-movies-scroll.png": "Film listesi (kaydirilmis)",
+  "05-movie-detail.png": "Film detayi - Eskiya + puanlama",
+  "05b-rate-movie.png": "Puanlama ekrani",
+  "10-puanlama.png": "Nasil puan verilir (Filmi Puanla + kaydet)",
   "06-favorites.png": "Favoriler",
-  "06b-favorites-delete.png": "Favoriden sil · seçili film + Delete Selected",
-  "08-rated.png": "Puanlad???m filmler",
-  "07-profile.png": "Profil · nadire@nadire.com",
+  "06b-favorites-delete.png": "Favoriden sil - secili film + Delete Selected",
+  "08-rated.png": "Puanladigim filmler",
+  "07-profile.png": "Profil - nadire@nadire.com",
   "09-home-movies.png": "Film listesi"
 };
 
