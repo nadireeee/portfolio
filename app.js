@@ -1,4 +1,4 @@
-/* Manifest gömülü — sunucu gerekmez, index.html çift týkla yeter */
+/* Manifest g?m?l? ? sunucu gerekmez, index.html ?ift t?kla yeter */
 const MANIFEST = {
   "akseker": [
     "assets/akseker/01_giris.png",
@@ -192,6 +192,17 @@ const MANIFEST = {
     "assets/bitirme/08-ai-kod-olusturucu.png",
     "assets/bitirme/08c-kod-olusturuldu.png",
     "assets/bitirme/06-profil.png"
+  ],
+  "maui-dotnet": [
+    "assets/maui-dotnet/01-login.png",
+    "assets/maui-dotnet/02-register.png",
+    "assets/maui-dotnet/03-forgot-password.png",
+    "assets/maui-dotnet/04-movies.png",
+    "assets/maui-dotnet/05-movie-detail.png",
+    "assets/maui-dotnet/06-favorites.png",
+    "assets/maui-dotnet/07-profile.png",
+    "assets/maui-dotnet/08-rated.png",
+    "assets/maui-dotnet/09-home-movies.png"
   ]
 };
 
@@ -207,7 +218,7 @@ function renderGallery(el, paths, emptyNote) {
   if (!paths || paths.length === 0) {
     const p = document.createElement("p");
     p.className = "gallery-empty";
-    p.textContent = emptyNote || "Ekran görüntüleri yakýnda eklenecek.";
+    p.textContent = emptyNote || "Ekran g?r?nt?leri yak?nda eklenecek.";
     el.appendChild(p);
     return;
   }
@@ -248,6 +259,7 @@ function boot() {
     fatura: MANIFEST.fatura,
     mikroservisler: MANIFEST.mikroservisler,
     bitirme: MANIFEST.bitirme,
+    "maui-dotnet": MANIFEST["maui-dotnet"],
   };
 
   document.querySelectorAll("[data-gallery]").forEach((el) => {
