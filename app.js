@@ -199,8 +199,8 @@ const MANIFEST = {
     "assets/maui-dotnet/03-forgot-password.png",
     "assets/maui-dotnet/04-movies.png",
     "assets/maui-dotnet/04b-movies-scroll.png",
+    "assets/maui-dotnet/12-movie-detail-info.png",
     "assets/maui-dotnet/11-rate-movie-clean.png",
-    "assets/maui-dotnet/06-favorites.png",
     "assets/maui-dotnet/06b-favorites-delete.png",
     "assets/maui-dotnet/08-rated.png",
     "assets/maui-dotnet/07-profile.png"
@@ -213,14 +213,14 @@ const GALLERY_CAPTIONS = {
   "03-forgot-password.png": "Sifremi unuttum",
   "04-movies.png": "Film listesi",
   "04b-movies-scroll.png": "Film listesi (kaydirilmis)",
-  "11-rate-movie-clean.png": "Rate Movie + Selected Score + Save Rating",
-  "06-favorites.png": "Favoriler",
-  "06b-favorites-delete.png": "Favoriden sil - secili film + Delete Selected",
+  "12-movie-detail-info.png": "Film detayi - Eskiya (ozet, tur, oyuncular)",
+  "11-rate-movie-clean.png": "Puanlama - Rate Movie + Save Rating",
+  "06b-favorites-delete.png": "Favoriler - secili film + Delete Selected",
   "08-rated.png": "Puanladigim filmler",
   "07-profile.png": "Profil - nadire@nadire.com"
 };
 
-const IMG_CACHE_BUST = "20260920ascii";
+const IMG_CACHE_BUST = "20260920unique2";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
