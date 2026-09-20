@@ -199,8 +199,7 @@ const MANIFEST = {
     "assets/maui-dotnet/03-forgot-password.png",
     "assets/maui-dotnet/04-movies.png",
     "assets/maui-dotnet/04b-movies-scroll.png",
-    "assets/maui-dotnet/05-movie-detail.png",
-    "assets/maui-dotnet/10-puanlama.png",
+    "assets/maui-dotnet/11-rate-movie-clean.png",
     "assets/maui-dotnet/06-favorites.png",
     "assets/maui-dotnet/06b-favorites-delete.png",
     "assets/maui-dotnet/08-rated.png",
@@ -214,15 +213,14 @@ const GALLERY_CAPTIONS = {
   "03-forgot-password.png": "Sifremi unuttum",
   "04-movies.png": "Film listesi",
   "04b-movies-scroll.png": "Film listesi (kaydirilmis)",
-  "05-movie-detail.png": "Film detayi - Eskiya + puanlama",
-  "05b-rate-movie.png": "Puanlama ekrani",
-  "10-puanlama.png": "Nasil puan verilir (Filmi Puanla + kaydet)",
+  "11-rate-movie-clean.png": "Rate Movie + Selected Score + Save Rating",
   "06-favorites.png": "Favoriler",
   "06b-favorites-delete.png": "Favoriden sil - secili film + Delete Selected",
   "08-rated.png": "Puanladigim filmler",
-  "07-profile.png": "Profil - nadire@nadire.com",
-  "09-home-movies.png": "Film listesi"
+  "07-profile.png": "Profil - nadire@nadire.com"
 };
+
+const IMG_CACHE_BUST = "20260920ascii";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
@@ -243,13 +241,14 @@ function renderGallery(el, paths, emptyNote) {
   }
   for (const src of paths) {
     const name = src.split("/").pop();
+    const busted = src.includes("?") ? src : `${src}?v=${IMG_CACHE_BUST}`;
     const fig = document.createElement("figure");
     const img = document.createElement("img");
-    img.src = src;
+    img.src = busted;
     img.alt = prettyName(name);
     img.loading = "lazy";
     img.decoding = "async";
-    img.addEventListener("click", () => openLightbox(src, img.alt));
+    img.addEventListener("click", () => openLightbox(busted, img.alt));
     const cap = document.createElement("figcaption");
     cap.textContent = prettyName(name);
     fig.append(img, cap);
