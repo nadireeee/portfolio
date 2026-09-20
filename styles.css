@@ -181,6 +181,13 @@ img { max-width: 100%; display: block; }
   color: var(--muted) !important;
 }
 
+.project-links {
+  margin-top: 1rem;
+}
+.project-links .btn {
+  text-decoration: none;
+}
+
 .gallery-wrap { min-width: 0; }
 .tabs {
   display: flex;
