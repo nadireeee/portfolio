@@ -205,6 +205,15 @@ const MANIFEST = {
     "assets/maui-dotnet/06b-favorites-delete.png",
     "assets/maui-dotnet/08-rated.png",
     "assets/maui-dotnet/07-profile.png"
+  ],
+  "staj-cpp": [
+    "assets/staj-cpp/01-empty.png",
+    "assets/staj-cpp/02-model-loaded.png",
+    "assets/staj-cpp/03-point-applied.png",
+    "assets/staj-cpp/04-section-x.png",
+    "assets/staj-cpp/05-section-y.png",
+    "assets/staj-cpp/06-section-z.png",
+    "assets/staj-cpp/07-transparency.png"
   ]
 };
 
@@ -219,10 +228,17 @@ const GALLERY_CAPTIONS = {
   "13-watch-trailer-homepage.png": "Links - Watch Trailer + Visit Homepage",
   "06b-favorites-delete.png": "Favoriler - secili film + Delete Selected",
   "08-rated.png": "Puanladigim filmler",
-  "07-profile.png": "Profil - nadire@nadire.com"
+  "07-profile.png": "Profil - nadire@nadire.com",
+  "01-empty.png": "Bos baslangic - 3D Model Viewer",
+  "02-model-loaded.png": "STL yuklendi - mesh + eksenler",
+  "03-point-applied.png": "Nokta secimi - Apply Point",
+  "04-section-x.png": "Kesit - X ekseni",
+  "05-section-y.png": "Kesit - Y ekseni",
+  "06-section-z.png": "Kesit - Z ekseni",
+  "07-transparency.png": "Seffaflik ayari"
 };
 
-const IMG_CACHE_BUST = "20260920nolinks";
+const IMG_CACHE_BUST = "20260921staj";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
@@ -280,6 +296,7 @@ function boot() {
     mikroservisler: MANIFEST.mikroservisler,
     bitirme: MANIFEST.bitirme,
     "maui-dotnet": MANIFEST["maui-dotnet"],
+    "staj-cpp": MANIFEST["staj-cpp"],
   };
 
   document.querySelectorAll("[data-gallery]").forEach((el) => {

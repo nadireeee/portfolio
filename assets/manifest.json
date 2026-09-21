@@ -203,5 +203,14 @@
         "assets/maui-dotnet/06b-favorites-delete.png",
         "assets/maui-dotnet/08-rated.png",
         "assets/maui-dotnet/07-profile.png"
+    ],
+    "staj-cpp": [
+        "assets/staj-cpp/01-empty.png",
+        "assets/staj-cpp/02-model-loaded.png",
+        "assets/staj-cpp/03-point-applied.png",
+        "assets/staj-cpp/04-section-x.png",
+        "assets/staj-cpp/05-section-y.png",
+        "assets/staj-cpp/06-section-z.png",
+        "assets/staj-cpp/07-transparency.png"
     ]
 }

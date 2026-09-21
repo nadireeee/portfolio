@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260920nolinks" />
+  <link rel="stylesheet" href="styles.css?v=20260921staj" />
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +29,8 @@
         çıkardım; sonra Flutter, Node.js ve .NET ile sahada kullanılan uygulamaları
         yazıp canlıya aldım. Aşağıda üç depo mobil projesi, market sipariş otomasyonu,
         havuz fatura paneli, mikroservisler dersindeki ToyLand,
-        CodeLearn mobil uygulaması ve C# dersindeki .NET MAUI MovieApp var. Müşteri kodları private; okul
+        CodeLearn mobil uygulaması, C# dersindeki .NET MAUI MovieApp ve Kuzgun Tech
+        stajındaki C++ / Qt 3D model viewer var. Müşteri kodları private; okul ve staj
         projeleri portföyde özet ve ekran görüntüleriyle sunulur.
       </p>
       <div class="hero-actions">
@@ -51,9 +52,9 @@
       <header class="section-head">
         <h2>Projeler</h2>
         <p>
-          İlk dördü canlı müşteri ortamında kullanıldı; son üçü üniversite
-          okul projeleri (mikroservisler, CodeLearn ve C# / .NET MAUI). Her birinde önce iş
-          kuralını netleştirip ekranı ve entegrasyonu ona göre kurdum.
+          İlk dördü canlı müşteri ortamında kullanıldı; ardından üniversite
+          okul projeleri ve Kuzgun Tech stajındaki C++ / Qt 3D viewer yer alıyor.
+          Her birinde önce iş kuralını netleştirip ekranı ve entegrasyonu ona göre kurdum.
         </p>
       </header>
 
@@ -234,6 +235,34 @@
         </div>
         <div class="gallery gallery--desktop" data-gallery="maui-dotnet"></div>
       </article>
+
+      <article class="project" id="staj-cpp">
+        <div class="project-copy">
+          <p class="tag">Staj · Kuzgun Tech · C++ · Qt · OpenGL</p>
+          <h3>3D Model Viewer &amp; Section Cutter</h3>
+          <p>
+            Kuzgun Tech stajında geliştirdiğim masaüstü C++ uygulaması.
+            STL modellerini OpenGL ile görselleştiriyor; mesh üzerinde nokta
+            seçimi, X/Y/Z eksenlerinde geometrik kesit hesabı ve kesit yollarının
+            CSV dışa aktarımı var. Clean Architecture (core / adapters / ports)
+            ile yazıldı; önceki Python aracının yüksek performanslı C++ / Qt
+            yeniden yazımı.
+          </p>
+          <ul>
+            <li>STL yükleme, normalize / orijinal koordinat uzayı</li>
+            <li>OpenGL 3D viewer: döndürme, zoom, pan, eksen widget’ları</li>
+            <li>Nokta seçimi + mesh–düzlem kesişimi ile kesit</li>
+            <li>Şeffaflık kontrolü ve kesit yollarını CSV export</li>
+          </ul>
+          <p class="meta">C++17 · Qt · OpenGL · Clean Architecture</p>
+          <p class="project-links">
+            <a class="repo-link" href="https://github.com/nadireeee/StajProje_CPP" target="_blank" rel="noopener">
+              GitHub → github.com/nadireeee/StajProje_CPP
+            </a>
+          </p>
+        </div>
+        <div class="gallery gallery--desktop" data-gallery="staj-cpp"></div>
+      </article>
     </section>
 
     <section id="skills" class="skills">
@@ -264,8 +293,9 @@
       <h2>İletişim</h2>
       <p>
         Başvuru veya demo için yazabilirsiniz. Müşteri projeleri NDA nedeniyle
-        private; okul projeleri (ToyLand, CodeLearn, MovieApp) portföyde özetlenir.
-        Müşteri uygulamaları için ekran üzerinden walkthrough gösterebilirim.
+        private; okul ve staj projeleri (ToyLand, CodeLearn, MovieApp, StajProje_CPP)
+        portföyde özetlenir. Müşteri uygulamaları için ekran üzerinden walkthrough
+        gösterebilirim.
       </p>
       <ul class="contact-list">
         <li><a href="mailto:nadireyndem@gmail.com">nadireyndem@gmail.com</a></li>
@@ -286,6 +316,6 @@
     <img alt="" />
   </div>
 
-  <script src="app.js?v=20260920nolinks"></script>
+  <script src="app.js?v=20260921staj"></script>
 </body>
 </html>
