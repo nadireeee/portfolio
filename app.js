@@ -238,7 +238,7 @@ const GALLERY_CAPTIONS = {
   "07-transparency.png": "Seffaflik ayari"
 };
 
-const IMG_CACHE_BUST = "20260921staj";
+const IMG_CACHE_BUST = "20260921full";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
@@ -246,6 +246,34 @@ function prettyName(file) {
     .replace(/\.[^.]+$/, "")
     .replace(/^\d+[a-z]?[_\-]*/, "")
     .replace(/[-_]/g, " ");
+}
+
+let lightboxState = { paths: [], index: 0 };
+
+function openLightbox(src, alt, paths, index) {
+  const box = document.getElementById("lightbox");
+  const img = box.querySelector("img");
+  lightboxState.paths = paths || [src];
+  lightboxState.index = typeof index === "number" ? index : 0;
+  img.src = lightboxState.paths[lightboxState.index];
+  img.alt = alt || prettyName((lightboxState.paths[lightboxState.index] || "").split("/").pop() || "");
+  box.hidden = false;
+}
+
+function showLightboxAt(index) {
+  const paths = lightboxState.paths;
+  if (!paths.length) return;
+  const i = (index + paths.length) % paths.length;
+  lightboxState.index = i;
+  const box = document.getElementById("lightbox");
+  const img = box.querySelector("img");
+  const src = paths[i];
+  img.src = src;
+  img.alt = prettyName(src.split("/").pop() || "");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").hidden = true;
 }
 
 function renderGallery(el, paths, emptyNote) {
@@ -257,33 +285,23 @@ function renderGallery(el, paths, emptyNote) {
     el.appendChild(p);
     return;
   }
-  for (const src of paths) {
-    const name = src.split("/").pop();
-    const busted = src.includes("?") ? src : `${src}?v=${IMG_CACHE_BUST}`;
+  const bustedPaths = paths.map((src) =>
+    src.includes("?") ? src : `${src}?v=${IMG_CACHE_BUST}`
+  );
+  bustedPaths.forEach((busted, index) => {
+    const name = paths[index].split("/").pop();
     const fig = document.createElement("figure");
     const img = document.createElement("img");
     img.src = busted;
     img.alt = prettyName(name);
     img.loading = "lazy";
     img.decoding = "async";
-    img.addEventListener("click", () => openLightbox(busted, img.alt));
+    img.addEventListener("click", () => openLightbox(busted, img.alt, bustedPaths, index));
     const cap = document.createElement("figcaption");
     cap.textContent = prettyName(name);
     fig.append(img, cap);
     el.appendChild(fig);
-  }
-}
-
-function openLightbox(src, alt) {
-  const box = document.getElementById("lightbox");
-  const img = box.querySelector("img");
-  img.src = src;
-  img.alt = alt || "";
-  box.hidden = false;
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").hidden = true;
+  });
 }
 
 function boot() {
@@ -323,7 +341,19 @@ function boot() {
     if (e.target === lb) closeLightbox();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
+    const box = document.getElementById("lightbox");
+    if (box.hidden) return;
+    if (e.key === "Escape") {
+      closeLightbox();
+      return;
+    }
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+      e.preventDefault();
+      showLightboxAt(lightboxState.index + 1);
+    } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+      e.preventDefault();
+      showLightboxAt(lightboxState.index - 1);
+    }
   });
 }
 
