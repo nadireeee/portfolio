@@ -213,7 +213,9 @@ const MANIFEST = {
     "assets/staj-cpp/04-section-x.png",
     "assets/staj-cpp/05-section-y.png",
     "assets/staj-cpp/06-section-z.png",
-    "assets/staj-cpp/07-transparency.png"
+    "assets/staj-cpp/07-transparency.png",
+    "assets/staj-cpp/08-export-csv.png",
+    "assets/staj-cpp/09-csv-content.png"
   ]
 };
 
@@ -231,14 +233,16 @@ const GALLERY_CAPTIONS = {
   "07-profile.png": "Profil - nadire@nadire.com",
   "01-empty.png": "Bos baslangic - 3D Model Viewer",
   "02-model-loaded.png": "STL yuklendi - mesh + eksenler",
-  "03-point-applied.png": "Nokta secimi - Apply Point",
-  "04-section-x.png": "Kesit - X ekseni",
-  "05-section-y.png": "Kesit - Y ekseni",
-  "06-section-z.png": "Kesit - Z ekseni",
-  "07-transparency.png": "Seffaflik ayari"
+  "03-point-applied.png": "Nokta girisi - Apply Point (0.25, -0.15, 0.10)",
+  "04-section-x.png": "Kesit - X ekseni (kamera X)",
+  "05-section-y.png": "Kesit - Y ekseni (kamera Y)",
+  "06-section-z.png": "Kesit - Z ekseni (kamera Z)",
+  "07-transparency.png": "Seffaflik ayari",
+  "08-export-csv.png": "Export CSV - basari dialogu",
+  "09-csv-content.png": "Export CSV - kesit koordinatlari"
 };
 
-const IMG_CACHE_BUST = "20260921full3";
+const IMG_CACHE_BUST = "20260921sections";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
