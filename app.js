@@ -238,11 +238,11 @@ const GALLERY_CAPTIONS = {
   "05-section-y.png": "Take Section Y - Point(0.12, -0.25, 0.18) turuncu kesit",
   "06-section-z.png": "Take Section Z - Point(-0.15, 0.20, 0.30) turuncu kesit",
   "07-transparency.png": "Seffaflik + kesit hala gorunur",
-  "08-export-csv.png": "Export CSV tamamlandi",
-  "09-csv-content.png": "Export CSV - kesit koordinatlari"
+  "08-export-csv.png": "Export CSV — Z kesiti kaydedildi (section-export.csv)",
+  "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem"
 };
 
-const IMG_CACHE_BUST = "20260921xyzAll";
+const IMG_CACHE_BUST = "20260921csvZ";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
