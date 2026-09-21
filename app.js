@@ -234,15 +234,15 @@ const GALLERY_CAPTIONS = {
   "01-empty.png": "Bos baslangic - 3D Model Viewer",
   "02-model-loaded.png": "STL yuklendi - mesh + eksenler",
   "03-point-applied.png": "Nokta girisi - Apply Point (0.25, -0.15, 0.10)",
-  "04-section-x.png": "Kesit - X ekseni (kamera X)",
-  "05-section-y.png": "Kesit - Y ekseni (kamera Y)",
-  "06-section-z.png": "Kesit - Z ekseni (kamera Z)",
-  "07-transparency.png": "Seffaflik ayari",
+  "04-section-x.png": "Take Section - X kesiti (turuncu kesit duzlemi)",
+  "05-section-y.png": "Take Section - Y kesiti (turuncu kesit duzlemi)",
+  "06-section-z.png": "Take Section - Z kesiti (turuncu kesit duzlemi)",
+  "07-transparency.png": "Seffaflik + kesit hala gorunur",
   "08-export-csv.png": "Export CSV - basari dialogu",
   "09-csv-content.png": "Export CSV - kesit koordinatlari"
 };
 
-const IMG_CACHE_BUST = "20260921sections";
+const IMG_CACHE_BUST = "20260921takeSection";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
