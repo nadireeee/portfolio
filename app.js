@@ -233,16 +233,16 @@ const GALLERY_CAPTIONS = {
   "07-profile.png": "Profil - nadire@nadire.com",
   "01-empty.png": "Bos baslangic - 3D Model Viewer",
   "02-model-loaded.png": "STL yuklendi - mesh + eksenler",
-  "03-point-applied.png": "Nokta girisi - Apply Point (0.25, -0.15, 0.10)",
-  "04-section-x.png": "Take Section - X kesiti (turuncu kesit duzlemi)",
-  "05-section-y.png": "Take Section - Y kesiti (turuncu kesit duzlemi)",
-  "06-section-z.png": "Take Section - Z kesiti (turuncu kesit duzlemi)",
+  "03-point-applied.png": "Nokta girisi - X Y Z dolu + Apply Point",
+  "04-section-x.png": "Take Section X - Point(0.20, 0.15, -0.10) turuncu kesit",
+  "05-section-y.png": "Take Section Y - Point(0.12, -0.25, 0.18) turuncu kesit",
+  "06-section-z.png": "Take Section Z - Point(-0.15, 0.20, 0.30) turuncu kesit",
   "07-transparency.png": "Seffaflik + kesit hala gorunur",
-  "08-export-csv.png": "Export CSV - basari dialogu",
+  "08-export-csv.png": "Export CSV tamamlandi",
   "09-csv-content.png": "Export CSV - kesit koordinatlari"
 };
 
-const IMG_CACHE_BUST = "20260921takeSection";
+const IMG_CACHE_BUST = "20260921xyzAll";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
