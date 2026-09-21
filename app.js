@@ -238,7 +238,7 @@ const GALLERY_CAPTIONS = {
   "07-transparency.png": "Seffaflik ayari"
 };
 
-const IMG_CACHE_BUST = "20260921full2";
+const IMG_CACHE_BUST = "20260921full3";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
