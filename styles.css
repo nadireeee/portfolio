@@ -352,16 +352,18 @@ footer {
   display: grid;
   place-items: center;
   padding: 1rem;
+  overflow: auto;
 }
 .lightbox[hidden] { display: none; }
 .lightbox img {
-  max-height: 92vh;
+  max-height: none;
   max-width: min(1100px, 96vw);
   width: auto;
   height: auto;
   object-fit: contain;
-  background: #0d0d0d;
+  background: transparent;
   border-radius: 8px;
+  margin: auto;
 }
 .lightbox-close {
   position: absolute;

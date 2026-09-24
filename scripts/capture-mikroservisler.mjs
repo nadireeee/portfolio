@@ -38,8 +38,19 @@ const MOCK_ORDERS = {
       createdAt: new Date().toISOString(),
       status: "Processing",
       totalPrice: 94.48,
-      firstName: "Admin",
-      lastName: "User",
+      shippingAddress: {
+        firstName: "Nadire",
+        lastName: "Yöntem",
+        emailAddress: "nadire@toyland.dev",
+        addressLine: "Mevlana Cd. No:12",
+        state: "Selçuklu",
+        country: "Türkiye",
+        zipCode: "42000",
+      },
+      orderItems: [
+        { productName: "Ahşap Tren Seti", quantity: 2, price: 29.99 },
+        { productName: "Peluş Ayıcık", quantity: 1, price: 34.5 },
+      ],
     },
     {
       id: "ord-1000",
@@ -47,8 +58,16 @@ const MOCK_ORDERS = {
       createdAt: new Date(Date.now() - 86400000 * 3).toISOString(),
       status: "Delivered",
       totalPrice: 42.0,
-      firstName: "Admin",
-      lastName: "User",
+      shippingAddress: {
+        firstName: "Nadire",
+        lastName: "Yöntem",
+        emailAddress: "nadire@toyland.dev",
+        addressLine: "Mevlana Cd. No:12",
+        state: "Selçuklu",
+        country: "Türkiye",
+        zipCode: "42000",
+      },
+      orderItems: [{ productName: "Uno Stack Pack", quantity: 1, price: 42.0 }],
     },
   ],
   pageNumber: 1,
@@ -59,7 +78,8 @@ const MOCK_ORDERS = {
 const shot = async (page, name) => {
   const file = path.join(OUT, `${name}.png`);
   await page.waitForTimeout(900);
-  await page.screenshot({ path: file, fullPage: true });
+  // Viewport only — fullPage creates tall strips that look broken in lightbox
+  await page.screenshot({ path: file, fullPage: false });
   const size = fs.statSync(file).size;
   const h1 = ((await page.locator("h1").first().textContent().catch(() => "")) || "").trim().slice(0, 90);
   console.log(`OK ${name} bytes=${size} url=${page.url()} h1=${h1}`);
@@ -160,6 +180,11 @@ const main = async () => {
     await page.waitForTimeout(2500);
     results.push(await shot(page, "07-orders"));
     if (!page.url().includes("/orders")) failed.push(`07-orders landed on ${page.url()}`);
+
+    await page.goto(`${BASE}/admin`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(2000);
+    results.push(await shot(page, "08-admin"));
+    if (!page.url().includes("/admin")) failed.push(`08-admin landed on ${page.url()}`);
 
     // Bonus logged-in products + admin/profile stubs if useful
     await page.goto(`${BASE}/products`, { waitUntil: "networkidle" });
