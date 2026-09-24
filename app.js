@@ -242,7 +242,7 @@ const GALLERY_CAPTIONS = {
   "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem"
 };
 
-const IMG_CACHE_BUST = "20260921csvZ";
+const IMG_CACHE_BUST = "20260924webp";
 
 function prettyName(file) {
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
@@ -250,6 +250,11 @@ function prettyName(file) {
     .replace(/\.[^.]+$/, "")
     .replace(/^\d+[a-z]?[_\-]*/, "")
     .replace(/[-_]/g, " ");
+}
+
+function toFastSrc(src) {
+  // Prefer compressed WebP siblings generated for gallery speed
+  return src.replace(/\.(png|jpe?g)$/i, ".webp");
 }
 
 let lightboxState = { paths: [], index: 0 };
@@ -289,16 +294,23 @@ function renderGallery(el, paths, emptyNote) {
     el.appendChild(p);
     return;
   }
-  const bustedPaths = paths.map((src) =>
-    src.includes("?") ? src : `${src}?v=${IMG_CACHE_BUST}`
-  );
+  const bustedPaths = paths.map((src) => {
+    const fast = toFastSrc(src);
+    return fast.includes("?") ? fast : `${fast}?v=${IMG_CACHE_BUST}`;
+  });
   bustedPaths.forEach((busted, index) => {
     const name = paths[index].split("/").pop();
     const fig = document.createElement("figure");
     const img = document.createElement("img");
     img.src = busted;
     img.alt = prettyName(name);
-    img.loading = "lazy";
+    // First two visible immediately; rest lazy
+    if (index < 2) {
+      img.loading = "eager";
+      img.fetchPriority = "high";
+    } else {
+      img.loading = "lazy";
+    }
     img.decoding = "async";
     img.addEventListener("click", () => openLightbox(busted, img.alt, bustedPaths, index));
     const cap = document.createElement("figcaption");
