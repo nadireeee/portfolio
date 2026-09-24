@@ -246,7 +246,7 @@ const GALLERY_CAPTIONS = {
   "09-products-logged-in.png": "Oyuncaklar (giris yapilmis)"
 };
 
-const IMG_CACHE_BUST = "20260924opaque";
+const IMG_CACHE_BUST = "20260924hesap";
 
 function prettyName(file) {
   const base = ((file || "").split("?")[0].split("/").pop() || file).trim();
