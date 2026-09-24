@@ -165,6 +165,7 @@ const MANIFEST = {
     "assets/mikroservisler/05-cart.png",
     "assets/mikroservisler/06-checkout.png",
     "assets/mikroservisler/07-orders.png",
+    "assets/mikroservisler/08-admin.png",
     "assets/mikroservisler/09-products-logged-in.png"
   ],
   "bitirme": [
@@ -238,10 +239,15 @@ const GALLERY_CAPTIONS = {
   "06-section-z.png": "Take Section Z - Point(-0.15, 0.20, 0.30) turuncu kesit",
   "07-transparency.png": "Seffaflik + kesit hala gorunur",
   "08-export-csv.png": "Export CSV — Z kesiti kaydedildi (section-export.csv)",
-  "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem"
+  "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem",
+  "01-home.png": "ToyLand - Ana sayfa",
+  "02-products.png": "Oyuncak listesi",
+  "07-orders.png": "Siparislerim - musteri bilgileri dolu",
+  "08-admin.png": "Yonetim paneli",
+  "09-products-logged-in.png": "Oyuncaklar (giris yapilmis)"
 };
 
-const IMG_CACHE_BUST = "20260924fix";
+const IMG_CACHE_BUST = "20260924toyland";
 
 function prettyName(file) {
   const base = ((file || "").split("?")[0].split("/").pop() || file).trim();
