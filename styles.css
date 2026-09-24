@@ -262,19 +262,17 @@ img { max-width: 100%; display: block; }
   object-position: top center;
   display: block;
 }
-/* Web / masaüstü ekranları: tüm pencere görünsün (koyu UI kaybolmasın) */
+/* Web / masaüstü: kutu görsele göre boylanır, siyah şerit yok */
 .gallery--desktop figure {
-  aspect-ratio: 16 / 10;
-  background: #2a322a;
-  border: 1px solid #3d4a3d;
+  aspect-ratio: auto;
+  background: transparent;
+  border: 1px solid var(--line);
 }
 .gallery--desktop img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center top;
+  height: auto;
   display: block;
-  background: #1e261e;
+  background: transparent;
 }
 .gallery figure:hover img {
   transform: scale(1.02);
