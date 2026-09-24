@@ -297,6 +297,7 @@ function openLightbox(src, alt, paths, index) {
   setLightboxSrc(img, current);
   img.alt = alt || prettyName(current);
   box.hidden = false;
+  document.body.style.overflow = "hidden";
 }
 
 function showLightboxAt(index) {
@@ -313,6 +314,7 @@ function showLightboxAt(index) {
 
 function closeLightbox() {
   document.getElementById("lightbox").hidden = true;
+  document.body.style.overflow = "";
 }
 
 function renderGallery(el, paths, emptyNote) {
