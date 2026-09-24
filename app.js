@@ -165,8 +165,7 @@ const MANIFEST = {
     "assets/mikroservisler/05-cart.png",
     "assets/mikroservisler/06-checkout.png",
     "assets/mikroservisler/07-orders.png",
-    "assets/mikroservisler/09-products-logged-in.png",
-    "assets/mikroservisler/10-profile.png"
+    "assets/mikroservisler/09-products-logged-in.png"
   ],
   "bitirme": [
     "assets/bitirme/01-login.png",
@@ -242,10 +241,10 @@ const GALLERY_CAPTIONS = {
   "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem"
 };
 
-const IMG_CACHE_BUST = "20260924thumbs";
+const IMG_CACHE_BUST = "20260924fix";
 
 function prettyName(file) {
-  const base = (file || "").split("/").pop() || file;
+  const base = ((file || "").split("?")[0].split("/").pop() || file).trim();
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
   if (GALLERY_CAPTIONS[base]) return GALLERY_CAPTIONS[base];
   const stem = base.replace(/\.thumb\.webp$/i, "").replace(/\.(webp|png|jpe?g)$/i, "");
@@ -270,13 +269,28 @@ function withBust(src) {
 
 let lightboxState = { paths: [], index: 0 };
 
+function setLightboxSrc(img, src) {
+  img.onerror = () => {
+    // webp yoksa orijinal png/jpg dene
+    const fallback = src
+      .replace(/\.thumb\.webp(\?|$)/i, ".png$1")
+      .replace(/\.webp(\?|$)/i, ".png$1");
+    if (fallback !== src) {
+      img.onerror = null;
+      img.src = fallback;
+    }
+  };
+  img.src = src;
+}
+
 function openLightbox(src, alt, paths, index) {
   const box = document.getElementById("lightbox");
   const img = box.querySelector("img");
   lightboxState.paths = paths || [src];
   lightboxState.index = typeof index === "number" ? index : 0;
-  img.src = lightboxState.paths[lightboxState.index];
-  img.alt = alt || prettyName((lightboxState.paths[lightboxState.index] || "").split("/").pop() || "");
+  const current = lightboxState.paths[lightboxState.index];
+  setLightboxSrc(img, current);
+  img.alt = alt || prettyName(current);
   box.hidden = false;
 }
 
@@ -288,8 +302,8 @@ function showLightboxAt(index) {
   const box = document.getElementById("lightbox");
   const img = box.querySelector("img");
   const src = paths[i];
-  img.src = src;
-  img.alt = prettyName(src.split("/").pop() || "");
+  setLightboxSrc(img, src);
+  img.alt = prettyName(src);
 }
 
 function closeLightbox() {
