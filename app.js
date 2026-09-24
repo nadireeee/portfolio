@@ -242,19 +242,30 @@ const GALLERY_CAPTIONS = {
   "09-csv-content.png": "CSV icerik — Z kesiti, Point(-0.15, 0.20, 0.30), z~0.30 duzlem"
 };
 
-const IMG_CACHE_BUST = "20260924webp";
+const IMG_CACHE_BUST = "20260924thumbs";
 
 function prettyName(file) {
+  const base = (file || "").split("/").pop() || file;
   if (GALLERY_CAPTIONS[file]) return GALLERY_CAPTIONS[file];
-  return file
-    .replace(/\.[^.]+$/, "")
-    .replace(/^\d+[a-z]?[_\-]*/, "")
-    .replace(/[-_]/g, " ");
+  if (GALLERY_CAPTIONS[base]) return GALLERY_CAPTIONS[base];
+  const stem = base.replace(/\.thumb\.webp$/i, "").replace(/\.(webp|png|jpe?g)$/i, "");
+  for (const [k, v] of Object.entries(GALLERY_CAPTIONS)) {
+    if (k.replace(/\.(png|jpe?g)$/i, "") === stem) return v;
+  }
+  return stem.replace(/^\d+[a-z]?[_\-]*/, "").replace(/[-_]/g, " ");
 }
 
-function toFastSrc(src) {
-  // Prefer compressed WebP siblings generated for gallery speed
+function toFullSrc(src) {
   return src.replace(/\.(png|jpe?g)$/i, ".webp");
+}
+
+function toThumbSrc(src) {
+  const full = toFullSrc(src);
+  return full.replace(/\.webp$/i, ".thumb.webp");
+}
+
+function withBust(src) {
+  return src.includes("?") ? src : `${src}?v=${IMG_CACHE_BUST}`;
 }
 
 let lightboxState = { paths: [], index: 0 };
@@ -290,34 +301,35 @@ function renderGallery(el, paths, emptyNote) {
   if (!paths || paths.length === 0) {
     const p = document.createElement("p");
     p.className = "gallery-empty";
-    p.textContent = emptyNote || "Ekran g?r?nt?leri yak?nda eklenecek.";
+    p.textContent = emptyNote || "Ekran goruntuleri yakinda eklenecek.";
     el.appendChild(p);
     return;
   }
-  const bustedPaths = paths.map((src) => {
-    const fast = toFastSrc(src);
-    return fast.includes("?") ? fast : `${fast}?v=${IMG_CACHE_BUST}`;
-  });
-  bustedPaths.forEach((busted, index) => {
+
+  // Grid: tiny thumbs (fast). Lightbox: full webp.
+  const fullPaths = paths.map((src) => withBust(toFullSrc(src)));
+  const thumbPaths = paths.map((src) => withBust(toThumbSrc(src)));
+
+  const frag = document.createDocumentFragment();
+  thumbPaths.forEach((thumb, index) => {
     const name = paths[index].split("/").pop();
     const fig = document.createElement("figure");
     const img = document.createElement("img");
-    img.src = busted;
+    img.src = thumb;
     img.alt = prettyName(name);
-    // First two visible immediately; rest lazy
-    if (index < 2) {
-      img.loading = "eager";
-      img.fetchPriority = "high";
-    } else {
-      img.loading = "lazy";
-    }
+    img.loading = "eager";
     img.decoding = "async";
-    img.addEventListener("click", () => openLightbox(busted, img.alt, bustedPaths, index));
+    img.width = 480;
+    img.addEventListener("click", () =>
+      openLightbox(fullPaths[index], img.alt, fullPaths, index)
+    );
     const cap = document.createElement("figcaption");
     cap.textContent = prettyName(name);
     fig.append(img, cap);
-    el.appendChild(fig);
+    frag.appendChild(fig);
   });
+  el.appendChild(frag);
+  el.dataset.loaded = "1";
 }
 
 function boot() {
@@ -333,6 +345,7 @@ function boot() {
     "staj-cpp": MANIFEST["staj-cpp"],
   };
 
+  // All galleries: tiny thumbs (~2MB total) so everything paints immediately
   document.querySelectorAll("[data-gallery]").forEach((el) => {
     const key = el.getAttribute("data-gallery");
     renderGallery(el, map[key]);
@@ -344,6 +357,7 @@ function boot() {
       document.querySelectorAll("#depo-mobil .tab").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       const key = btn.getAttribute("data-tab");
+      depoGallery.dataset.loaded = "0";
       renderGallery(depoGallery, map[key]);
       depoGallery.setAttribute("data-gallery", key);
       depoGallery.classList.add("gallery--phone");
