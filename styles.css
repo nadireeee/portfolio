@@ -348,7 +348,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(0, 0, 0, 0.92);
+  background: #000;
   display: grid;
   place-items: center;
   padding: 1rem;
@@ -356,12 +356,12 @@ footer {
 }
 .lightbox[hidden] { display: none; }
 .lightbox img {
-  max-height: none;
+  max-height: 92vh;
   max-width: min(1100px, 96vw);
   width: auto;
   height: auto;
   object-fit: contain;
-  background: transparent;
+  background: #000;
   border-radius: 8px;
   margin: auto;
 }

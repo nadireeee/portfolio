@@ -165,8 +165,7 @@ const MANIFEST = {
     "assets/mikroservisler/05-cart.png",
     "assets/mikroservisler/06-checkout.png",
     "assets/mikroservisler/07-orders.png",
-    "assets/mikroservisler/08-admin.png",
-    "assets/mikroservisler/09-products-logged-in.png"
+    "assets/mikroservisler/08-admin.png"
   ],
   "bitirme": [
     "assets/bitirme/01-login.png",
@@ -247,7 +246,7 @@ const GALLERY_CAPTIONS = {
   "09-products-logged-in.png": "Oyuncaklar (giris yapilmis)"
 };
 
-const IMG_CACHE_BUST = "20260924toyland";
+const IMG_CACHE_BUST = "20260924opaque";
 
 function prettyName(file) {
   const base = ((file || "").split("?")[0].split("/").pop() || file).trim();
