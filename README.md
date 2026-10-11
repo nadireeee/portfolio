@@ -1,36 +1,36 @@
-# Nadire Yöndem — Portfolio
+# Nadire Yöndem — Portföy
 
-Personal portfolio site for ERP, integration, and software projects.
+Kişisel portföy sitesi. ERP, entegrasyon ve yazılım projelerinin özetleri ile ekran görüntülerini içerir.
 
-**Live:** https://nadireeee.github.io/portfolio/
+**Canlı site:** https://nadireeee.github.io/portfolio/
 
-Customer application source code is not included in this repository. The public site shows project summaries and screenshots only.
+Müşteri uygulama kaynak kodları bu depoda yoktur. Yayınlanan içerik yalnızca proje özeti ve ekran görüntüsüdür.
 
-## Projects
+## Projeler
 
-| Project | Stack | Notes |
-|---------|--------|--------|
-| Warehouse mobile apps (3 customers) | Flutter, DIA Web Services v3, Firebase | Offline-first goods receipt, shipment, and transfer |
-| Market order automation | Node.js, EDI/XML, DIA | Bizofis/ECOD orders into DIA purchase orders |
-| Invoice transfer panel | React, TypeScript, .NET 9 | Multi-company invoice distribution with status tracking |
-| ToyLand | .NET microservices, React | University microservices course project |
-| CodeLearn | Expo, NestJS, Gemini | Graduation project — C/C++ learning app |
-| MovieApp | .NET MAUI, ASP.NET | Course project — movies, favorites, ratings |
-| 3D Model Viewer | C++, Qt, OpenGL | Kuzgun Tech internship — STL section and CSV export |
+| Proje | Teknoloji | Açıklama |
+|-------|-----------|----------|
+| Depo mobil uygulamaları (3 müşteri) | Flutter, DIA Web Servis v3, Firebase | Offline-first mal kabul, sevkiyat ve transfer |
+| Market sipariş otomasyonu | Node.js, EDI/XML, DIA | Bizofis/ECOD siparişlerinin DIA’ya aktarımı |
+| Havuz fatura paneli | React, TypeScript, .NET 9 | Çok firmalı fatura dağıtımı ve durum takibi |
+| ToyLand | .NET mikroservis, React | Üniversite mikroservisler dersi projesi |
+| CodeLearn | Expo, NestJS, Gemini | Bitirme projesi — C/C++ öğrenme uygulaması |
+| MovieApp | .NET MAUI, ASP.NET | Ders projesi — film, favori, puanlama |
+| 3D Model Viewer | C++, Qt, OpenGL | Kuzgun Tech stajı — STL kesit ve CSV dışa aktarma |
 
-## Stack
+## Teknik yapı
 
-HTML, CSS, and JavaScript. Screenshots are served as WebP assets under `assets/`.
+Site HTML, CSS ve JavaScript ile yazılmıştır. Görseller `assets/` altında WebP olarak tutulur.
 
-## Run locally
+## Yerelde çalıştırma
 
 ```powershell
 cd nadire-portfolio
 npx --yes serve .
 ```
 
-Open `http://localhost:3000`.
+Tarayıcıda `http://localhost:3000` adresini açın.
 
-## License
+## Lisans
 
-Personal portfolio. Screenshots and copy may not be reused without permission.
+Kişisel portföy. İçerik izinsiz kopyalanamaz.
