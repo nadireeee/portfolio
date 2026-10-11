@@ -1,71 +1,36 @@
-# Nadire Yöndem — Portföy Sitesi
+# Nadire Yöndem — Portfolio
 
-Gerçek, linkle paylaşılabilir kişisel portföy. Kaynak kod private; ekran görüntüleri + teknik özet public.
+Personal portfolio site for ERP, integration, and software projects.
 
-## Yerelde aç
+**Live:** https://nadireeee.github.io/portfolio/
 
-1. Klasöre gir: `C:\Users\nadire\Desktop\nadire-portfolio`
-2. `index.html` dosyasına çift tıkla **veya**
-3. PowerShell:
+Customer application source code is not included in this repository. The public site shows project summaries and screenshots only.
+
+## Projects
+
+| Project | Stack | Notes |
+|---------|--------|--------|
+| Warehouse mobile apps (3 customers) | Flutter, DIA Web Services v3, Firebase | Offline-first goods receipt, shipment, and transfer |
+| Market order automation | Node.js, EDI/XML, DIA | Bizofis/ECOD orders into DIA purchase orders |
+| Invoice transfer panel | React, TypeScript, .NET 9 | Multi-company invoice distribution with status tracking |
+| ToyLand | .NET microservices, React | University microservices course project |
+| CodeLearn | Expo, NestJS, Gemini | Graduation project — C/C++ learning app |
+| MovieApp | .NET MAUI, ASP.NET | Course project — movies, favorites, ratings |
+| 3D Model Viewer | C++, Qt, OpenGL | Kuzgun Tech internship — STL section and CSV export |
+
+## Stack
+
+HTML, CSS, and JavaScript. Screenshots are served as WebP assets under `assets/`.
+
+## Run locally
 
 ```powershell
-cd C:\Users\nadire\Desktop\nadire-portfolio
-Start-Process index.html
-```
-
-> Not: Bazı tarayıcılarda `file://` ile `manifest.json` engellenebilir. O zaman:
-
-```powershell
-cd C:\Users\nadire\Desktop\nadire-portfolio
+cd nadire-portfolio
 npx --yes serve .
 ```
 
-Tarayıcıda çıkan `http://localhost:3000` adresini aç.
+Open `http://localhost:3000`.
 
-## GitHub Pages ile public link (CV’ye bunu koy)
+## License
 
-1. GitHub’da yeni **public** repo oluştur: örn. `nadireeee/portfolio`
-2. Terminal:
-
-```powershell
-cd C:\Users\nadire\Desktop\nadire-portfolio
-git init
-git add .
-git commit -m "Personal portfolio site with project screenshots"
-git branch -M main
-git remote add origin https://github.com/nadireeee/portfolio.git
-git push -u origin main
-```
-
-3. GitHub → repo → **Settings → Pages**
-4. Source: **Deploy from a branch** → `main` → `/ (root)` → Save
-5. 1–2 dk sonra link:
-
-```
-https://nadireeee.github.io/portfolio/
-```
-
-## CV’ye yazılacak satır
-
-```
-Portföy: https://nadireeee.github.io/portfolio/
-GitHub: https://github.com/nadireeee  (müşteri kodları NDA nedeniyle private)
-```
-
-## İçerik
-
-| Klasör | Proje | Screenshot |
-|--------|--------|------------|
-| assets/depo-a | Offline depo mobil A | 27 |
-| assets/depo-b | Offline depo mobil B | ~57 |
-| assets/depo-c | Offline depo mobil C | 27 |
-| assets/ecod | EDI → DIA sipariş | 10 |
-| assets/fatura | Havuz fatura paneli | 36 |
-
-dib-mobil ve web için henüz screenshot yok; metin kartları sitede duruyor.
-
-## Güvenlik
-
-- API key / şifre / DIA URL yok
-- Screenshot’larda gerçek cari/kişisel veri varsa yayın öncesi maskele
-- Müşteri kaynak kodunu bu repoya koyma
+Personal portfolio. Screenshots and copy may not be reused without permission.
